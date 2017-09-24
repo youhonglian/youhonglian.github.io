@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs"><title>移动端开发-页面样式重置 - Youuu</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.jpg"></head><body><input id="navi" type="checkbox"><ul class="main-navication"><li><a href="/"><span>Home</span></a></li><li><a href="https://github.com/youhonglian"><span>Github</span></a></li><li><a href="https://segmentfault.com/u/youzhiwan"><span>SegmentFault</span></a></li><li><a href="https://segmentfault.com/u/youzhiwan/notes"><span>我的笔记</span></a></li><li><a href="http://os3fgs3e7.bkt.clouddn.com/%E6%B8%B8%E6%B4%AA%E8%8E%B2web%E5%89%8D%E7%AB%AF.pdf"><span>关于我</span></a></li></ul><div class="wrapper" id="wrap"><div class="post-header"><label class="navi-button light" for="navi">MENU</label><img class="background" src="http://callfiles.ueibo.com/hexo-theme-laughing/post_background.jpg"><div class="post-title"><h1 class="title">移动端开发-页面样式重置</h1><ul class="meta"><li><i class="icon icon-author"></i>Youuu</li><li><i class="icon icon-clock"></i>1 Minutes</li><li><i class="icon icon-calendar"></i>September 24, 2017</li></ul></div></div><div class="article-content" style="max-width:800px"><ul>
+<li><p>-webkit-tap-highlight-color:rgba(255,0,0,0.5);<br>透明度alpha设置为0，去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚(Android)<br>利用此属性，设置touch时链接区域高亮为50%的透明红，<br>只在ios上起作用 android上只要使用了此属性就表现为边框。在body上加此属性，这样就保证body的点击区域效果一致了</p>
+</li>
+<li><p>outline：none(1)<br>在pc端为a标签定义这个样式的目的是为了取消ie浏览器下点击a标签时出现的虚线。ie7及以下浏览器还不识别此属性，需要在a标签上添加hidefocus=”true”(2)input，textarea{outline:none} 取消chrome下默认的文本框聚焦样式(3)在移动端是不起作用的，想要去除文本框的默认样式可以使用-webkit-appearance，聚焦时候默认样式的取消是-webkit-tap-highlight-color。看到一些移动端reset文件加了此属性，其实是多余。</p>
+</li>
+<li><p>-webkit-appearance -webkit-appearance: none;<br>//消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 。 注意：不同type的input使用这个属性之后表现不一。text、button无样式，radio、checkbox直接消失</p>
+</li>
+<li><p>-webkit-user-select -webkit-user-select: none;<br>// 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整</p>
+</li>
+<li><p>-webkit-text-size-adjust -webkit-text-size-adjust: none;<br>//禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化)，此属性也不继承，一般加在body上规定整个body的文字都不会自动调整</p>
+</li>
+<li><p>-webkit-touch-callout -webkit-touch-callout:none;<br>// 禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加</p>
+</li>
+<li><p>-webkit-overflow-scrolling -webkit-overflow-scrolling:touch;<br>// 局部滚动(仅iOS 5以上支持)</p>
+</li>
+</ul>
+</div><div class="article-meta" style="max-width:800px"><div class="tags"><i class="icon icon-tag"></i><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li></ul></div><div class="categories"><i class="icon icon-category"></i><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li></ul></div></div><div class="article-comment" style="max-width:800px"><div class="ds-thread" id="ds-thread" data-thread-key="cj7yu1dgt0007eku4lw7fq1o0" data-title="移动端开发-页面样式重置" data-url="http://youhonglian.github.io/2017/09/24/mobile- optimization/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/09/24/javascript-test/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/youhonglian" title="Github" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="https://segmentfault.com/u/youzhiwan" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="http://weibo.com/537727123/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://www.zhihu.com/people/jing-xiang-95-49/activities" title="zhihu" target="_blank"><i class="icon icon-zhihu"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Youuu<br><small>POWER BY <a href="https://hexo.io" target="_blank">HEXO</a></small><small>, THEME BY <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank">LAUGHING</a></small></p></div></div></div><script>var wrap = document.getElementById('wrap');
+window.onload = function () {
+  wrap.className += ' done';
+}</script></body></html>
