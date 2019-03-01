@@ -1,2 +1,0 @@
-# youhonglian.github.io
-blog
