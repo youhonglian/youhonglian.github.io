@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs"><title>理解14道Javascript Quiz - Youuu</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.jpg"></head><body><input id="navi" type="checkbox"><ul class="main-navication"><li><a href="/"><span>Home</span></a></li><li><a href="https://github.com/youhonglian"><span>Github</span></a></li><li><a href="https://segmentfault.com/u/youzhiwan"><span>SegmentFault</span></a></li><li><a href="https://segmentfault.com/u/youzhiwan/notes"><span>我的笔记</span></a></li><li><a href="http://os3fgs3e7.bkt.clouddn.com/%E6%B8%B8%E6%B4%AA%E8%8E%B2web%E5%89%8D%E7%AB%AF.pdf"><span>关于我</span></a></li></ul><div class="wrapper" id="wrap"><div class="post-header"><label class="navi-button light" for="navi">MENU</label><img class="background" src="http://callfiles.ueibo.com/hexo-theme-laughing/post_background.jpg"><div class="post-title"><h1 class="title">理解14道Javascript Quiz</h1><ul class="meta"><li><i class="icon icon-author"></i>Youuu</li><li><i class="icon icon-clock"></i>13 Minutes</li><li><i class="icon icon-calendar"></i>August 3, 2017</li></ul></div></div><div class="article-content" style="max-width:800px"><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>答案： “object”</p>
+<blockquote>
+<p>arguments 是对象，虽然像数组.就算是数组，typeof 返回的也是 “object” </p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">23</span>; &#125;;</span><br><span class="line"><span class="keyword">typeof</span> g();</span><br></pre></td></tr></table></figure>
+<p>答案：Error.</p>
+<blockquote>
+<p> g 未定义。在 JS 里，声明函数只有 2 种方法：第 1 种： function foo(){…}  （函数声明）第 2 种： var foo = function(){…}   （等号后面必须是匿名函数，这句实质是函数表达式）除此之外，类似于 var foo = function bar(){…} 这样的东西统一按 2 方法处理，即在函数外部无法通过 bar 访问到函数，因为这已经变成了一个表达式。此处g是函数名,然而第一行不是一个函数声明,因此函数名g仅能在该函数内部被访问到</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> x;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;)(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>答案：1</p>
+<blockquote>
+<p>delete 操作符用于删除对象的成员变量，不能删除函数的参数及变量。</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> y = <span class="number">1</span>, x = y = <span class="keyword">typeof</span> x;</span><br><span class="line">x;</span><br></pre></td></tr></table></figure>
+<p>答案：”undefined”</p>
+<blockquote>
+<p>先定义了 y 并赋值为 1，然后将 typeof x 赋值给 y ，此时 x 未定义，故为 “undefined”，最后将 y 的值赋给 x</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">f</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> f();</span><br><span class="line">&#125;)(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;);</span><br></pre></td></tr></table></figure>
+<p>答案：”number”</p>
+<blockquote>
+<p>在函数里的 f() 其实是参数的那个 f 的执行结果，所以是 typeof 1，也就是 “number”</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.baz; &#125;,</span><br><span class="line">    baz: <span class="number">1</span></span><br><span class="line">  &#125;;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> <span class="built_in">arguments</span>[<span class="number">0</span>]();</span><br><span class="line">  &#125;)(foo.bar);</span><br></pre></td></tr></table></figure>
+<p>答案：”undefined”</p>
+<blockquote>
+<p>这里的 this 指的是 arguments</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.baz; &#125;,</span><br><span class="line">    baz: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">typeof</span> (f = foo.bar)();</span><br></pre></td></tr></table></figure>
+<p>答案：”undefined”</p>
+<blockquote>
+<p>因为CallExpression是不带有上下文信息，this会指向global；当你以foo.bar() 调用时，被调用的function是「MemberExpression」，而如果进行了f=foo.bar()赋值之后，那么function就会变成「CallExpression」了，因此this绑定就失效了</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="string">"1"</span>; &#125;, <span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">2</span>; &#125;)();</span><br><span class="line"> <span class="keyword">typeof</span> f;</span><br></pre></td></tr></table></figure>
+<p>答案：”number”</p>
+<blockquote>
+<p>只有最后面的函数会被执行。逗号操作符多用于声明多个变量，逗号操作符还可以用于赋值，在用于赋值时，逗号操作符总会返回表达式的最后一项，例如： var num = (5,1,4,8,0); //num的值为0</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;&#125;) &#123;</span><br><span class="line">  x += <span class="keyword">typeof</span> f;</span><br><span class="line">&#125;</span><br><span class="line">x;</span><br></pre></td></tr></table></figure>
+<p>答案：”1undefined”</p>
+<blockquote>
+<p>括号内的 function f(){} 不是函数声明，会被转换成 true ，因此 f 未定义。if语句的判断部分内是一个函数f,转化为布尔值为真。(只有””(空字符串)、0、NaN、null、undefined的布尔值是false).这段代码里的function f(){}并不是函数声明。而是函数表达式。因此全局内并无f这个标识符，代码相当于<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    x=<span class="number">1</span>+<span class="string">'undefined'</span>;</span><br><span class="line">&#125;</span><br><span class="line">x;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = [<span class="keyword">typeof</span> x, <span class="keyword">typeof</span> y][<span class="number">1</span>];</span><br><span class="line"> <span class="keyword">typeof</span> <span class="keyword">typeof</span> x;</span><br></pre></td></tr></table></figure>
+<p>答案：”string”</p>
+<blockquote>
+<p>第一行执行完后 x === “undefined” ，所以连续求 2 次 typeof 还是 “string”</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">foo</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> foo.bar;</span><br><span class="line">&#125;)(&#123; <span class="attr">foo</span>: &#123; <span class="attr">bar</span>: <span class="number">1</span> &#125; &#125;);</span><br></pre></td></tr></table></figure>
+<p>答案：”undefined”</p>
+<blockquote>
+<p>typeof foo.bar 中的 foo 是参数</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">return</span> f();</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">2</span>; &#125;</span><br><span class="line">  &#125;)();</span><br></pre></td></tr></table></figure>
+<p>答案：2</p>
+<blockquote>
+<p>由于声明提前，后面的 f() 会覆盖前面的 f()</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> f; &#125;</span><br><span class="line"><span class="keyword">new</span> f() <span class="keyword">instanceof</span> f;</span><br></pre></td></tr></table></figure>
+<p>答案：false</p>
+<blockquote>
+<p>构造函数不需要显式声明返回值，默认返回this值。当显式声明了返回值时，如果返回值是非对象（数字、字符串等），这个返回值会被忽略，继续返回this值。但是如果返回值是对象，那么这个显式返回值会被返回。因为 f() 内部返回了自己，故此时 new f() 的结果和 f 相等。</p>
+</blockquote>
+<p><br><br><br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> (<span class="function"><span class="keyword">function</span>(<span class="params">x, undefined</span>)</span>&#123;&#125;) length;</span><br></pre></td></tr></table></figure>
+<p>答案：2</p>
+<blockquote>
+<p>with 限定了作用域是这个函数，而一个函数对象的length属性是该函数的形参个数，function.length 返回函数的参数个数，所以是 2。undefined 虽然是关键词，但可以被覆写。但 null 不能。</p>
+</blockquote>
+</div><div class="article-meta" style="max-width:800px"><div class="tags"><i class="icon icon-tag"></i><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">2</span></li></ul></div><div class="categories"><i class="icon icon-category"></i><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li></ul></div></div><div class="article-comment" style="max-width:800px"><div class="ds-thread" id="ds-thread" data-thread-key="cjer1lyoc00063olu6kpkl4jh" data-title="理解14道Javascript Quiz" data-url="http://youhonglian.github.io/2017/08/03/javascript-quiz/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/08/15/lazy_img/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2017/07/29/interview-test/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/youhonglian" title="Github" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="https://segmentfault.com/u/youzhiwan" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://www.zhihu.com/people/jing-xiang-95-49/activities" title="zhihu" target="_blank"><i class="icon icon-zhihu"></i></a></li><li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=994312463&amp;site=qq&amp;menu=yes" title="QQChat" target="_blank"><i class="icon icon-wechat"></i></a></li><li><a href="mailto:994312463@qq.com" title="Email" target="_blank"><i class="icon icon-email"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2018 Youuu<br><small>POWER BY <a href="https://hexo.io" target="_blank">HEXO</a></small><small>, THEME BY <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank">LAUGHING</a></small></p></div></div></div><script>var wrap = document.getElementById('wrap');
+window.onload = function () {
+  wrap.className += ' done';
+}</script></body></html>
