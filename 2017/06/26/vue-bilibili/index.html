@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs"><title>Vue.js全家桶仿哔哩哔哩动画 (移动端APP) - Youuu</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.jpg"></head><body><input id="navi" type="checkbox"><ul class="main-navication"><li><a href="/"><span>Home</span></a></li><li><a href="https://github.com/youhonglian"><span>Github</span></a></li><li><a href="https://segmentfault.com/u/youzhiwan"><span>SegmentFault</span></a></li><li><a href="https://segmentfault.com/u/youzhiwan/notes"><span>我的笔记</span></a></li><li><a href="http://os3fgs3e7.bkt.clouddn.com/%E6%B8%B8%E6%B4%AA%E8%8E%B2web%E5%89%8D%E7%AB%AF.pdf"><span>关于我</span></a></li></ul><div class="wrapper" id="wrap"><div class="post-header"><label class="navi-button light" for="navi">MENU</label><img class="background" src="http://callfiles.ueibo.com/hexo-theme-laughing/post_background.jpg"><div class="post-title"><h1 class="title">Vue.js全家桶仿哔哩哔哩动画 (移动端APP)</h1><ul class="meta"><li><i class="icon icon-author"></i>Youuu</li><li><i class="icon icon-clock"></i>2 Minutes</li><li><i class="icon icon-calendar"></i>June 26, 2017</li></ul></div></div><div class="article-content" style="max-width:800px"><h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><h3 id="·-由于项目是移动端-电脑访问时可以切换成手机端"><a href="#·-由于项目是移动端-电脑访问时可以切换成手机端" class="headerlink" title="· 由于项目是移动端,电脑访问时可以切换成手机端"></a>· 由于项目是移动端,电脑访问时可以切换成手机端</h3><h3 id="·-播放页面其实没有根据B站移动端来-比较粗糙"><a href="#·-播放页面其实没有根据B站移动端来-比较粗糙" class="headerlink" title="· 播放页面其实没有根据B站移动端来, 比较粗糙"></a>· 播放页面其实没有根据B站移动端来, 比较粗糙</h3><h3 id="·-源码地址"><a href="#·-源码地址" class="headerlink" title="· 源码地址"></a>· <a href="http://github.com/youhonglian/vue-bilibili" target="_blank" rel="noopener">源码地址</a></h3><h3 id="·-在线预览"><a href="#·-在线预览" class="headerlink" title="· 在线预览"></a>· <a href="https://youhonglian.github.io/vue-bilibili-master/#/">在线预览</a></h3><h1 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h1><h2 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h2><ul>
+<li>实现的Swiper, Toast,  Indicator组件 来自Mint-ui</li>
+<li>使用了Vue.js做单页应用</li>
+<li>使用了Vue Router处理路由请求</li>
+<li>使用了Axios做ajax请求</li>
+<li>使用了Vuex管理组件间的状态，实现非父子组件之间的通信</li>
+<li>皮肤状态通过localstorage存储</li>
+</ul>
+<h2 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h2><ul>
+<li>开发环境下使用了express处理路由</li>
+</ul>
+<h2 id="待更新的功能"><a href="#待更新的功能" class="headerlink" title="待更新的功能"></a>待更新的功能</h2><ul>
+<li>Video标签的优化</li>
+<li>直播界面的优化</li>
+<li>视频的弹幕加载</li>
+<li>将Vuex管理优化</li>
+<li>一些bug的解决</li>
+</ul>
+<h3 id="小提示"><a href="#小提示" class="headerlink" title="小提示"></a>小提示</h3><p>运行项目的时候注意一下网络, 一不小心会耗费一大波流量 (´･_･`)<br>遇到在线预览显示不出来的情况，可以戳源码本地运行</p>
+<h2 id="实现的功能"><a href="#实现的功能" class="headerlink" title="实现的功能"></a>实现的功能</h2><ul>
+<li>B站首页（轮播图、直播、推荐、番剧、排行榜、分区）</li>
+<li>切换主题（黑色和粉色的主题）</li>
+<li>搜索视频</li>
+<li>播放页面（简介、评论显示、发表评论、点赞、番剧选集）</li>
+</ul>
+<h2 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h2><p>  <img src="http://ww3.sinaimg.cn/large/006HJ39wgy1fgsxh2dc0vj30ag0ilgs5.jpg" width="400" height="627"><br>  <img src="http://ww1.sinaimg.cn/large/006HJ39wgy1fgsxh6dkarj30ah0iognv.jpg" width="400" height="627"><br>  <img src="http://ww2.sinaimg.cn/large/006HJ39wgy1fgsxgnrti1j30af0im46j.jpg" width="400" height="627"><br>  <img src="http://ww3.sinaimg.cn/large/006HJ39wgy1fgsxh9dj7nj30ae0ii40i.jpg" width="400" height="627"><br>  <img src="http://ww1.sinaimg.cn/large/006HJ39wgy1fgsxhch9qrj30a90imaee.jpg" width="400" height="627"></p>
+<p>  <img src="http://storage1.imgchr.com/ki658.gif" width="400" height="627"></p>
+<p>由于项目做的比较仓促，也比较粗糙. 项目中还有很多bug, 请见谅. 欢迎大家提issue，pr</p>
+<p> <a href="https://segmentfault.com/a/1190000009912978" target="_blank" rel="noopener">友情链接</a></p>
+</div><div class="article-meta" style="max-width:800px"><div class="tags"><i class="icon icon-tag"></i><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">1</span></li></ul></div><div class="categories"><i class="icon icon-category"></i><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/vue-js/">vue.js</a><span class="category-list-count">2</span></li></ul></div></div><div class="article-comment" style="max-width:800px"><div class="ds-thread" id="ds-thread" data-thread-key="cjybeodnu000n4tk9bja0desm" data-title="Vue.js全家桶仿哔哩哔哩动画 (移动端APP)" data-url="http://youhonglian.github.io/2017/06/26/vue-bilibili/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/08/14/interview-test/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2017/06/16/vuex/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/youhonglian" title="Github" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="https://segmentfault.com/u/youzhiwan" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://www.zhihu.com/people/jing-xiang-95-49/activities" title="zhihu" target="_blank"><i class="icon icon-zhihu"></i></a></li><li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=994312463&amp;site=qq&amp;menu=yes" title="QQChat" target="_blank"><i class="icon icon-wechat"></i></a></li><li><a href="mailto:994312463@qq.com" title="Email" target="_blank"><i class="icon icon-email"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2019 Youuu<br><small>POWER BY <a href="https://hexo.io" target="_blank">HEXO</a></small><small>, THEME BY <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank">LAUGHING</a></small></p></div></div></div><script>var wrap = document.getElementById('wrap');
+window.onload = function () {
+  wrap.className += ' done';
+}</script></body></html>
